@@ -38,5 +38,10 @@
         "name": "PostSubtraction",
         "private": false,
         "disable_arg_logs": true
+    },
+    {
+        "name": "GetDivision",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
