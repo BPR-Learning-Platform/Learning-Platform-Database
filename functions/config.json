@@ -43,5 +43,10 @@
         "name": "GetDivision",
         "private": false,
         "disable_arg_logs": true
+    },
+    {
+        "name": "PostDivision",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
