@@ -23,5 +23,10 @@
         "name": "GetAddition",
         "private": false,
         "disable_arg_logs": true
+    },
+    {
+        "name": "PostAddition",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
