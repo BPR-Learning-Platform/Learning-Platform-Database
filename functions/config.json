@@ -53,5 +53,10 @@
         "name": "GetMultiplication",
         "private": false,
         "disable_arg_logs": true
+    },
+    {
+        "name": "PostMultiplication",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
