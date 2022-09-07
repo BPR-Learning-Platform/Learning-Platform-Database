@@ -13,5 +13,10 @@
         "name": "GetClass",
         "private": false,
         "disable_arg_logs": true
+    },
+    {
+        "name": "PostClass",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
