@@ -1,32 +1,22 @@
-// This function is the endpoint's request handler.
-exports = function({ query, headers, body}, response) {
-    // Data can be extracted from the request as follows:
+// Post metode for users
+exports = async function (request, response) {
+  // 1. Parse the incoming request
+  const bodyJson = JSON.parse(request.body.text());
 
-    // Query params, e.g. '?arg1=hello&arg2=world' => {arg1: "hello", arg2: "world"}
-    const {arg1, arg2} = query;
-
-    // Headers, e.g. {"Content-Type": ["application/json"]}
-    const contentTypes = headers["Content-Type"];
-
-    // Raw request body (if the client sent one).
-    // This is a binary object that can be accessed as a string using .text()
-    const reqBody = body;
-
-    console.log("arg1, arg2: ", arg1, arg2);
-    console.log("Content-Type:", JSON.stringify(contentTypes));
-    console.log("Request body:", reqBody);
-
-    // You can use 'context' to interact with other application features.
-    // Accessing a value:
-    // var x = context.values.get("value_name");
-
-    // Querying a mongodb service:
-    // const doc = context.services.get("mongodb-atlas").db("dbname").collection("coll_name").findOne();
-
-    // Calling a function:
-    // const result = context.functions.execute("function_name", arg1, arg2);
-
-    // The return value of the function is sent as the response back to the client
-    // when the "Respond with Result" setting is set.
-    return  "Hello World!";
-};
+		 // 2. Run the endpoint logic
+	result = await context.services
+    .get("mongodb-atlas")
+    .db("BPRDB")
+    .collection("User").updateOne(
+   { $or: [{"User.Name": bodyJson.userName.toString()}, {"User.Email": bodyJson.userId.toString()}] }, //do NOT insert new user if username OR userid already exists
+   { $setOnInsert: { "User.Name" : bodyJson.uName.toString(), //"Name" from angular
+                      "User.Email" : bodyJson.Email.toString(), //Email ("Email" from angular)
+                      "User.Password" : bodyJson.Password.toString(), //Pasword ("Password" from angular)
+                      //"User.AssignedClassID" : bodyJson.AssignedClassID.toString(), //ClassID ("ClassID" from angular)
+                      "User.Type" : bodyJson.Type.toString(), //Type ("Type" from angular)
+   } },
+   { upsert: true }
+)
+  // 3. Configure the response
+ response.setBody(JSON.stringify(result)); 
+} 
