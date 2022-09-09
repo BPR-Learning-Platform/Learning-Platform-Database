@@ -1,3 +1,4 @@
+//Skal bruge Email og Password for at få useren
 exports = function(payload, response){
   
   const {Email} = payload.query;
