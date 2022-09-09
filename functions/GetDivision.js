@@ -4,7 +4,7 @@ exports = function(payload, response){
   
   let query = {};
   if (TaskID){
-    query = {"Division.TaskID": {$eq : userid}
+    query = {"Division.TaskID": {$eq : TaskID}
       
 } }
 
