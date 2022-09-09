@@ -6,7 +6,7 @@ exports = async function (request, response) {
   await context.services
     .get("mongodb-atlas")
     .db("BPRDB")
-    .collection("Dvision")
+    .collection("Division")
     .insertOne({ Division: {
       TaskID: bodyJson.TaskID.toString(),
       Exercise: bodyJson.Exercise.toString(),
