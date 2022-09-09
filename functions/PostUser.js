@@ -9,7 +9,7 @@ exports = async function (request, response) {
     .db("BPRDB")
     .collection("User").updateOne(
    { $or: [{"User.Name": bodyJson.userName.toString()}, {"User.Email": bodyJson.userId.toString()}] }, //do NOT insert new user if username OR userid already exists
-   { $setOnInsert: { "User.Name" : bodyJson.uName.toString(), //"Name" from angular
+   { $setOnInsert: { "User.Name" : bodyJson.Name.toString(), //"Name" from angular
                       "User.Email" : bodyJson.Email.toString(), //Email ("Email" from angular)
                       "User.Password" : bodyJson.Password.toString(), //Pasword ("Password" from angular)
                       //"User.AssignedClassID" : bodyJson.AssignedClassID.toString(), //ClassID ("ClassID" from angular)
