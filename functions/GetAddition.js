@@ -8,7 +8,7 @@ exports = function(payload, response){
       
 } }
 
-  const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("Addition");
+  const doc = context.services.get("mongodb-atlas").db("PBRDB").collection("Addition");
   let commentList = doc.find(query)
 
   
