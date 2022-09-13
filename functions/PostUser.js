@@ -12,8 +12,8 @@ exports = async function (request, response) {
    { $setOnInsert: { "User.Name" : bodyJson.Name.toString(), //"Name" from angular
                       "User.Email" : bodyJson.Email.toString(), //Email ("Email" from angular)
                       "User.Password" : bodyJson.Password.toString(), //Pasword ("Password" from angular)
-                      //"User.AssignedClassID" : bodyJson.AssignedClassID.toString(), //ClassID ("ClassID" from angular)
-                      "User.Type" : bodyJson.Type.toString(), //Type ("Type" from angular)
+                      "User.AssignedClassID" : bodyJson.AssignedClassID.toString().split(','), //ClassID ("ClassID" from angular)
+                      "User.Type" : bodyJson.Type.toString() //Type ("Type" from angular)
    } },
    { upsert: true }
 )
