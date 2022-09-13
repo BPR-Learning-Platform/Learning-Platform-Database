@@ -10,7 +10,8 @@ exports = async function (request, response) {
     .insertOne({ Division: {
       TaskID: bodyJson.TaskID.toString(),
       Exercise: bodyJson.Exercise.toString(),
-      Answer: bodyJson.Answer.toString()
+      Answer: bodyJson.Answer.toString(),
+      TaskLevel: bodyJson.TaskLevel.toString()
       
     }});
   // 3. Configure the response
