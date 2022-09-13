@@ -11,7 +11,7 @@ exports = async function (request, response) {
       TaskID: bodyJson.TaskID.toString(),
       Exercise: bodyJson.Exercise.toString(),
       Answer: bodyJson.Answer.toString(),
-      TaskLevel: bodyJson.TaskLevel.toString()
+      TaskLevel: bodyJson.TaskLevel.toString().split(',')
       
     }});
   // 3. Configure the response
