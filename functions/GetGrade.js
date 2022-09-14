@@ -1,14 +1,14 @@
 exports = function(payload, response){
   
-  const {ClassID} = payload.query;
+  const {GradeID} = payload.query;
   
   let query = {};
-  if (ClassID){
-    query = {"Class.ClassID": {$eq : ClassID}
+  if (GradeID){
+    query = {"Grade.GradeID": {$eq : GradeID}
       
 } }
 
-  const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("Class");
+  const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("Grade");
   let commentList = doc.find(query)
 
   
