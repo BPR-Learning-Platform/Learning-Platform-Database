@@ -7,7 +7,7 @@ exports = function(payload, response){
   
   if (AssignedGradeIDs){
     
-    let query = {"User.AssignedGradeIDs": {$eq : AssignedGradeIDs}}
+    let query = {"User.AssignedGradeIDs.0": {$eq : AssignedGradeIDs}}
     
     const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("User");
     userList = doc.find( query , {"User.AssignedGradeIDs":0} );
