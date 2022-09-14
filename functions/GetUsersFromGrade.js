@@ -13,5 +13,5 @@ exports = function(payload, response){
   let userList = doc.find(query)
 
   
-return usertList;
+return userList;
 };
