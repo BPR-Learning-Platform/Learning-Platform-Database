@@ -2,6 +2,7 @@
     {
         "name": "GetUser",
         "private": false,
+        "run_as_system": true,
         "disable_arg_logs": true
     },
     {
@@ -12,7 +13,6 @@
     {
         "name": "GetGrade",
         "private": false,
-        "run_as_system": true,
         "disable_arg_logs": true
     },
     {
@@ -21,7 +21,7 @@
         "disable_arg_logs": true
     },
     {
-        "name": "GetStep1Task",
+        "name": "GetTask",
         "private": false,
         "run_as_system": true,
         "disable_arg_logs": true
