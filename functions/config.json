@@ -10,53 +10,22 @@
         "disable_arg_logs": true
     },
     {
-        "name": "GetClass",
+        "name": "GetGrade",
         "private": false,
         "disable_arg_logs": true
     },
     {
-        "name": "PostClass",
+        "name": "PostGrade",
         "private": false,
         "disable_arg_logs": true
     },
     {
-        "name": "GetAddition",
-        "private": false,
-        "run_as_system": true,
-        "disable_arg_logs": true
-    },
-    {
-        "name": "PostAddition",
+        "name": "GetTask",
         "private": false,
         "disable_arg_logs": true
     },
     {
-        "name": "GetSubtraction",
-        "private": false,
-        "disable_arg_logs": true
-    },
-    {
-        "name": "PostSubtraction",
-        "private": false,
-        "disable_arg_logs": true
-    },
-    {
-        "name": "GetDivision",
-        "private": false,
-        "disable_arg_logs": true
-    },
-    {
-        "name": "PostDivision",
-        "private": false,
-        "disable_arg_logs": true
-    },
-    {
-        "name": "GetMultiplication",
-        "private": false,
-        "disable_arg_logs": true
-    },
-    {
-        "name": "PostMultiplication",
+        "name": "PostTask",
         "private": false,
         "disable_arg_logs": true
     }

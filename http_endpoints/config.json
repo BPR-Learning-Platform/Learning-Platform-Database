@@ -22,9 +22,9 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/Class",
+        "route": "/Grade",
         "http_method": "GET",
-        "function_name": "GetClass",
+        "function_name": "GetGrade",
         "validation_method": "NO_VALIDATION",
         "respond_result": true,
         "fetch_custom_user_data": false,
@@ -33,9 +33,9 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/Class",
+        "route": "/Grade",
         "http_method": "POST",
-        "function_name": "PostClass",
+        "function_name": "PostGrade",
         "validation_method": "NO_VALIDATION",
         "respond_result": true,
         "fetch_custom_user_data": false,
@@ -44,9 +44,9 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/Addition",
+        "route": "/Task",
         "http_method": "GET",
-        "function_name": "GetAddition",
+        "function_name": "GetTask",
         "validation_method": "NO_VALIDATION",
         "respond_result": true,
         "fetch_custom_user_data": false,
@@ -55,75 +55,9 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/Addition",
+        "route": "/Task",
         "http_method": "POST",
-        "function_name": "PostAddition",
-        "validation_method": "NO_VALIDATION",
-        "respond_result": true,
-        "fetch_custom_user_data": false,
-        "create_user_on_auth": false,
-        "disabled": false,
-        "return_type": "EJSON"
-    },
-    {
-        "route": "/subtraction",
-        "http_method": "GET",
-        "function_name": "GetSubtraction",
-        "validation_method": "NO_VALIDATION",
-        "respond_result": true,
-        "fetch_custom_user_data": false,
-        "create_user_on_auth": false,
-        "disabled": false,
-        "return_type": "EJSON"
-    },
-    {
-        "route": "/Subtraction",
-        "http_method": "POST",
-        "function_name": "PostSubtraction",
-        "validation_method": "NO_VALIDATION",
-        "respond_result": true,
-        "fetch_custom_user_data": false,
-        "create_user_on_auth": false,
-        "disabled": false,
-        "return_type": "EJSON"
-    },
-    {
-        "route": "/division",
-        "http_method": "GET",
-        "function_name": "GetDivision",
-        "validation_method": "NO_VALIDATION",
-        "respond_result": true,
-        "fetch_custom_user_data": false,
-        "create_user_on_auth": false,
-        "disabled": false,
-        "return_type": "EJSON"
-    },
-    {
-        "route": "/division",
-        "http_method": "POST",
-        "function_name": "PostDivision",
-        "validation_method": "NO_VALIDATION",
-        "respond_result": true,
-        "fetch_custom_user_data": false,
-        "create_user_on_auth": false,
-        "disabled": false,
-        "return_type": "EJSON"
-    },
-    {
-        "route": "/multiplication",
-        "http_method": "GET",
-        "function_name": "GetMultiplication",
-        "validation_method": "NO_VALIDATION",
-        "respond_result": true,
-        "fetch_custom_user_data": false,
-        "create_user_on_auth": false,
-        "disabled": false,
-        "return_type": "EJSON"
-    },
-    {
-        "route": "/multiplication",
-        "http_method": "POST",
-        "function_name": "PostMultiplication",
+        "function_name": "PostTask",
         "validation_method": "NO_VALIDATION",
         "respond_result": true,
         "fetch_custom_user_data": false,
