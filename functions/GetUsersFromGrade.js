@@ -1,16 +1,16 @@
 //Skal bruge ClassID for at finde userne
 exports = function(payload, response){
   
-  const {ClassID} = payload.query;
+  const {GradeID} = payload.query;
   
   let userList = [];
   
-  if (ClassID){
+  if (GradeID){
     
-    let query =  {"User.ClassID": {$eq : ClassID}}  
+    let query =  {"User.GradeID": {$eq : GradeID}}  
     
     const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("User");
-    userList = doc.find( query , {"User.ClassID":0} );
+    userList = doc.find( query , {"User.GradeID":0} );
   
   }
 
