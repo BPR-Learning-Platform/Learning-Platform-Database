@@ -5,7 +5,7 @@ exports = function(payload, response){
   
   let query = {};
   if (AssignedGradeIDs){
-    query = {"User.AssignedGradeIDs.": {$eq : AssignedGradeIDs}
+    query = {"User.AssignedGradeIDs.0": {$eq : AssignedGradeIDs}
       
 } }
 
