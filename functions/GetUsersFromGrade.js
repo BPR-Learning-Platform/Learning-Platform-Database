@@ -1,19 +1,17 @@
-//Skal bruge AssignedGradeID for at finde userne
+//Skal bruge AssignedGradeIDs for at finde users
 exports = function(payload, response){
   
-  const {AssignedGradeID} = payload.query;
+  const {AssignedGradeIDs} = payload.query;
   
-  let userList = [];
-  
-  if (AssignedGradeID){
-    
-    let query =  {"User.AssignedGradeID": {$eq : AssignedGradeID}}  
-    
-    const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("User");
-    userList = doc.find( query , {"User.AssignedGradeID":0} );
-  
-  }
+  let query = {};
+  if (AssignedGradeIDs){
+    query = {"User.AssignedGradeIDs": {$eq : AssignedGradeIDs}
+      
+} }
 
-return userList;
+  const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("User");
+  let userList = doc.find(query)
 
+  
+return usertList;
 };
