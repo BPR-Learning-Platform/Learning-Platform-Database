@@ -28,5 +28,10 @@
         "name": "PostTask",
         "private": false,
         "disable_arg_logs": true
+    },
+    {
+        "name": "GetUsersFromGrade",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
