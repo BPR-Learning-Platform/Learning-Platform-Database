@@ -4,11 +4,11 @@ exports = function(payload, response){
   
   let query = {};
   if (TaskID){
-    query = {"Division.TaskID": {$eq : TaskID}
+    query = {"Step1.TaskID": {$eq : TaskID}
       
 } }
 
-  const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("Division");
+  const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("Step1");
   let commentList = doc.find(query)
 
   
