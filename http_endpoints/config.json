@@ -1,6 +1,6 @@
 [
     {
-        "route": "/Signin",
+        "route": "/User/Signin",
         "http_method": "POST",
         "function_name": "PostSignin",
         "validation_method": "NO_VALIDATION",
