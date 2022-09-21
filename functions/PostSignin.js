@@ -9,7 +9,7 @@ exports = async function (payload, response) {
   const {Email} = bodyJson;
   const {Password} = bodyJson;
   
-  let userList = [];
+
   
   if (Email && Password){
     
@@ -18,6 +18,7 @@ exports = async function (payload, response) {
     result = doc.find( bodyJson );
   
 }
+  let userList = result;
 return result;
 
 };
