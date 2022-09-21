@@ -1,6 +1,11 @@
 exports = async function (payload, response) {
 
+   const collection = context.services.get("mongodb-atlas")
+                      .db("cards")
+                      .collection("my collection");
  const data = JSON.parse(payload.body.text())
+ 
+ result = await context.services
 
   const {Email} = bodyJson;
   const {Password} = bodyJson;
@@ -10,8 +15,7 @@ exports = async function (payload, response) {
   if (Email && Password){
     
     let bodyJson = { $and: [ {"User.Email": {$eq : Email}}, {"User.Password": {$eq : Password}}]} 
-    
-    const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("User");
+
     userList = doc.find( bodyJson );
   
 }
