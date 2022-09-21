@@ -16,7 +16,7 @@ exports = async function (payload, response) {
     
     let bodyJson = { $and: [ {"User.Email": {$eq : Email}}, {"User.Password": {$eq : Password}}]} 
 
-    userList = await doc.find( bodyJson );
+    userList = await doc.find( bodyJson, {"User.Email":0} );
   
 }
 return userList;
