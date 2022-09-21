@@ -11,7 +11,7 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/user",
+        "route": "/User",
         "http_method": "POST",
         "function_name": "PostUser",
         "validation_method": "NO_VALIDATION",
