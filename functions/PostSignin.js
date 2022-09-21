@@ -1,6 +1,6 @@
 exports = async function (payload, response) {
 
-   const collection = context.services.get("mongodb-atlas")
+   const doc = context.services.get("mongodb-atlas")
                       .db("cards")
                       .collection("my collection");
  const bodyJson = JSON.parse(payload.body.text())
