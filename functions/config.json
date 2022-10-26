@@ -6,8 +6,9 @@
         "disable_arg_logs": true
     },
     {
-        "name": "PostUser",
+        "name": "PutUser",
         "private": false,
+        "run_as_system": true,
         "disable_arg_logs": true
     },
     {
@@ -19,6 +20,7 @@
     {
         "name": "PostGrade",
         "private": false,
+        "run_as_system": true,
         "disable_arg_logs": true
     },
     {
@@ -30,10 +32,41 @@
     {
         "name": "PostTask",
         "private": false,
+        "run_as_system": true,
         "disable_arg_logs": true
     },
     {
         "name": "GetUsersFromGrade",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "GetAllGrades",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "GetUserFromID",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "GetStatistics",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "PostStatistic",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "PostUser",
         "private": false,
         "run_as_system": true,
         "disable_arg_logs": true

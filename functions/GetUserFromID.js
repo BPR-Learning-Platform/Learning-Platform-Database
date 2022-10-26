@@ -1,13 +1,12 @@
-//Skal bruge AssignedGradeIDs for at finde brugerne
+//Skal bruge userid for at finde brugerne
 exports = function(payload, response){
   
-  const {assignedgradeid} = payload.query;
+  const {userid} = payload.query;
    
   let userList = [];
   
-  if (assignedgradeid){
-    let query = { "User.AssignedGradeIDs": assignedgradeid }
-    
+  if (userid){
+    let query = { "UserID": parseInt(userid) }
     const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("User");
     userList = doc.find( query );
   

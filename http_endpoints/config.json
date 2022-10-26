@@ -1,6 +1,6 @@
 [
     {
-        "route": "/User/Signin",
+        "route": "/user/signin",
         "http_method": "POST",
         "function_name": "PostSignin",
         "validation_method": "NO_VALIDATION",
@@ -11,9 +11,9 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/User",
-        "http_method": "POST",
-        "function_name": "PostUser",
+        "route": "/user",
+        "http_method": "PUT",
+        "function_name": "PutUser",
         "validation_method": "NO_VALIDATION",
         "respond_result": true,
         "fetch_custom_user_data": false,
@@ -22,7 +22,7 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/Grade",
+        "route": "/grade",
         "http_method": "GET",
         "function_name": "GetGrade",
         "validation_method": "NO_VALIDATION",
@@ -33,7 +33,7 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/Grade",
+        "route": "/grade",
         "http_method": "POST",
         "function_name": "PostGrade",
         "validation_method": "NO_VALIDATION",
@@ -44,7 +44,7 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/Task",
+        "route": "/task",
         "http_method": "GET",
         "function_name": "GetTask",
         "validation_method": "NO_VALIDATION",
@@ -55,7 +55,7 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/Task",
+        "route": "/task",
         "http_method": "POST",
         "function_name": "PostTask",
         "validation_method": "NO_VALIDATION",
@@ -66,11 +66,66 @@
         "return_type": "EJSON"
     },
     {
-        "route": "/WholeGrade",
+        "route": "/wholegrade",
         "http_method": "GET",
         "function_name": "GetUsersFromGrade",
         "validation_method": "NO_VALIDATION",
-        "respond_result": false,
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "EJSON"
+    },
+    {
+        "route": "/grades",
+        "http_method": "GET",
+        "function_name": "GetAllGrades",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "EJSON"
+    },
+    {
+        "route": "/user",
+        "http_method": "GET",
+        "function_name": "GetUserFromID",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "EJSON"
+    },
+    {
+        "route": "/statistic",
+        "http_method": "GET",
+        "function_name": "GetStatistics",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "EJSON"
+    },
+    {
+        "route": "/statistic",
+        "http_method": "POST",
+        "function_name": "PostStatistic",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "EJSON"
+    },
+    {
+        "route": "/user",
+        "http_method": "POST",
+        "function_name": "PostUser",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
         "fetch_custom_user_data": false,
         "create_user_on_auth": false,
         "disabled": false,

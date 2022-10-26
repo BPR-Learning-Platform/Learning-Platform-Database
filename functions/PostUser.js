@@ -1,22 +1,27 @@
-// Post metode for users
+//Post user
 exports = async function (request, response) {
   // 1. Parse the incoming request
   const bodyJson = JSON.parse(request.body.text());
 
 		 // 2. Run the endpoint logic
-	result = await context.services
+
+      	result = await context.services
     .get("mongodb-atlas")
     .db("BPRDB")
-    .collection("User").updateOne(
-   { $or: [{"User.Name": bodyJson.userName.toString()}, {"User.Email": bodyJson.userId.toString()}] }, //do NOT insert new user if username OR userid already exists
-   { $setOnInsert: { "User.Name" : bodyJson.Name.toString(), //"Name" from angular
-                      "User.Email" : bodyJson.Email.toString(), //Email ("Email" from angular)
-                      "User.Password" : bodyJson.Password.toString(), //Pasword ("Password" from angular)
-                      "User.AssignedClassID" : bodyJson.AssignedClassID.toString().split(','), //ClassID ("ClassID" from angular)
-                      "User.Type" : bodyJson.Type.toString() //Type ("Type" from angular)
-   } },
-   { upsert: true }
-)
+    .collection("User")
+    .updateOne( { "User.Email": bodyJson.email.toString() }, 
+    {$setOnInsert: { User : {     
+                      AssignedGradeIDs : bodyJson.assignedgradeids.toString().split(","),
+                      Email : bodyJson.email.toString().toLowerCase(),
+                      Name : bodyJson.name.toString(), 
+                      Password : bodyJson.password.toString(), 
+                      Score : bodyJson.score.toString(), 
+                      Type : bodyJson.type.toString(),
+    }}},
+    { upsert: true } );
   // 3. Configure the response
- response.setBody(JSON.stringify(result)); 
-} 
+  if (result.matchedCount == 1){return 403
+  }
+  else{
+ response.setBody(JSON.stringify(result)); }
+    }
