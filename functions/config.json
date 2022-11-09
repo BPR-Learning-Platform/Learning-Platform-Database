@@ -60,15 +60,30 @@
         "disable_arg_logs": true
     },
     {
-        "name": "PostStatistic",
+        "name": "PostUser",
         "private": false,
         "run_as_system": true,
         "disable_arg_logs": true
     },
     {
-        "name": "PostUser",
+        "name": "ScheduledUpdate",
         "private": false,
         "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "PutUser1",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "PostUser1",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "PostSignin1",
+        "private": false,
         "disable_arg_logs": true
     }
 ]

@@ -8,7 +8,7 @@ exports = async function (request, response) {
       	result = await context.services
     .get("mongodb-atlas")
     .db("BPRDB")
-    .collection("User")
+    .collection("User1")
     .updateOne( { "User.Email": bodyJson.email.toString() }, 
     {$setOnInsert: { User : {     
                       AssignedGradeIDs : bodyJson.assignedgradeids.toString().split(","),
@@ -16,7 +16,7 @@ exports = async function (request, response) {
                       Name : bodyJson.name.toString(), 
                       Password : bodyJson.password.toString(), 
                       Type : bodyJson.type.toString(), 
-                      Score : bodyJson.score.toString()}}},
+                      Score : bodyJson.score}}},
     { upsert: true } );
   // 3. Configure the response
   if (result.matchedCount == 1){return 403

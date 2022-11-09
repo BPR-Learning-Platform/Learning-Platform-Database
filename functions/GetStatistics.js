@@ -5,16 +5,16 @@ exports = function(payload, response){
   const {gradeid} = payload.query;
   const {studentid} = payload.query;
 
-  let query = {}
-  let satisticList;
-  if (gradeid == null && studentid){
-      query = {"Statistic.StudentID": {$eq : studentid}}
+  let statisticList;
+  
+ if (gradeid){
+     let query = {"Statistic.AssignedGradeIDs": {$eq : gradeid}}
        const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("Statistic");
-  statisticList = doc.find(query)
-}  else if (studentid == null && gradeid){
-     query = {"Statistic.GradeID": {$eq : gradeid}}
+  statisticList = doc.find(query);
+} else if (studentid){
+     let query = {"UserID": parseInt(studentid)}
        const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("Statistic");
-  statisticList = doc.find(query)
+  statisticList = doc.find(query);
 }
   return statisticList;
 };

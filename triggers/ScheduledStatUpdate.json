@@ -1,0 +1,17 @@
+{
+    "id": "636245449f28f5b3550057ea",
+    "name": "ScheduledStatUpdate",
+    "type": "SCHEDULED",
+    "config": {
+        "schedule": "0 0 * * 0",
+        "skip_catchup_events": false
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "ScheduledUpdate"
+            }
+        }
+    }
+}
