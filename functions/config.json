@@ -74,16 +74,19 @@
     {
         "name": "PutUser1",
         "private": false,
+        "run_as_system": true,
         "disable_arg_logs": true
     },
     {
         "name": "PostUser1",
         "private": false,
+        "run_as_system": true,
         "disable_arg_logs": true
     },
     {
         "name": "PostSignin1",
         "private": false,
+        "run_as_system": true,
         "disable_arg_logs": true
     }
 ]

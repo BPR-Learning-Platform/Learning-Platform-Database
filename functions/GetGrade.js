@@ -4,9 +4,8 @@ exports = function(payload, response){
   
   let query = {};
   if (gradeid){
-    query = {"Grade.GradeID": {$eq : gradeid}
-      
-} }
+    query = { "GradeID": parseInt(gradeid) }
+  }
 
   const doc = context.services.get("mongodb-atlas").db("BPRDB").collection("Grade");
   let grade = doc.find(query)

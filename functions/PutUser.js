@@ -12,7 +12,7 @@ exports = async function (request, response) {
    { $set: {  "User.AssignedGradeIDs" : bodyJson.assignedgradeids.toString().split(","),
                       "User.Name" : bodyJson.name.toString(),
                       "User.Type" : bodyJson.type.toString(),
-                      "User.Score" : bodyJson.score.toString(),
+                      "User.Score" : bodyJson.score,
 
    } },
    { upsert: true }

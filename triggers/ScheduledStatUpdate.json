@@ -3,7 +3,7 @@
     "name": "ScheduledStatUpdate",
     "type": "SCHEDULED",
     "config": {
-        "schedule": "0 0 * * 0",
+        "schedule": "0 0 * * 2",
         "skip_catchup_events": false
     },
     "disabled": false,

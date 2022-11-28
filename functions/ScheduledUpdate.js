@@ -1,4 +1,5 @@
 exports = async function(arg){
+  
   let thing = await context.services
     .get("mongodb-atlas")
     .db("BPRDB")
@@ -8,22 +9,57 @@ exports = async function(arg){
   'User.Type': 'S'
  }
 },
-    { //Unwinds the array so the gradeids are easier to work with 
- $unwind: "$User.AssignedGradeIDs" 
-      
-    },
-{        //Removes the specific types that is not needed! _id is removed so it gets a new _id in the Statistic collection
- $project: {
-   '_id': 0,
-  'User.Type': 0,
-  'User.Email': 0,
-  'User.Password': 0,
-  'User.Name': 0
- }
-}, {          //Adds timestamp to the documents
- $addFields: {
-  timestamp: '$$NOW'
- }
+{
+    $project: { //Takes the first element in the array and creates an object with the users in it. After that it passes on score, userID and removes _id
+        firstProject: {
+            $arrayElemAt: [
+                '$User.AssignedGradeIDs',
+                0
+            ]
+        },
+        'User.Score': 1,
+        UserID: 1,
+        _id: 0
+    }
+}, {
+    $addFields: { // Passes assignedgradeid to int so it can be compared to UserID from user
+        'User.AssignedGradeIDs': {
+            $toInt: '$firstProject'
+        }
+    }
+}, {
+    $lookup: { // Compares user and grade on GradeID/AssignedGradeIDs
+        from: 'Grade',
+        localField: 'User.AssignedGradeIDs',
+        foreignField: 'GradeID',
+        as: 'ID'
+    }
+}, {
+    $project: { // Creates new object with the users on AssignedGradeIDs and passes on needed elements
+        secondProject: {
+            $arrayElemAt: [
+                '$ID',
+                0
+            ]
+        },
+        'User.Score': 1,
+        IDtoString: '$User.AssignedGradeIDs',
+        UserID: 1
+    }
+}, {
+    $addFields: { // Adds timestamp and step to User object and transforms AssignedGradeIDs back to a string
+        'User.AssignedGradeIDs': {
+            $toString: '$IDtoString'
+        },
+        'User.Step': '$secondProject.Grade.Step',
+        timestamp : '$$NOW'
+        //timestamp: new Date("2022-11-09T11:24:13.222+00:00")
+    }
+}, {
+    $project: { // Removes unused objects
+        secondProject: 0,
+        IDtoString: 0
+    }
 },]).toArray();
 
 context.services      //inserts the snapshot of students to the Statistic collection
